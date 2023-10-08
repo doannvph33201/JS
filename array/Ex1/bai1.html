@@ -1,0 +1,50 @@
+<script>
+    let array = [
+        {
+            id: 1,
+            name: "Chuyên mục 1",
+            parent: 0,
+        },
+        {
+            id: 2,
+            name: "Chuyên mục 2",
+            parent: 0,
+        },
+        {
+            id: 3,
+            name: "Chuyên mục 3",
+            parent: 0,
+        }
+    ]
+
+    let array_lenght = array.length
+    let newArray = [array_lenght]
+
+    for (let i = 0; i < array_lenght; i++) {
+        newArray[i] = new Array(3)
+    }
+
+    for (let i = 0; i < array_lenght; i++) {
+        newArray[i][0] = array[i].id
+        newArray[i][1] = array[i].name
+        newArray[i][2] = array[i].parent
+    }
+
+    newArray.sort((a, b) => {
+        let nameA = a[1].toUpperCase()
+        let nameB = b[1].toUpperCase()
+
+        if (nameA < nameB) {
+            return -1
+        }
+        if (nameA > nameB) {
+            return 1
+        }
+        return 0
+    })
+
+    for (let i = 0; i < array_lenght; i++) {
+        console.log(newArray[i])
+    }
+
+</script>

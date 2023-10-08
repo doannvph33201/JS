@@ -1,0 +1,124 @@
+<script>
+    const numbers = [1, 2, 3, 4, 5]
+
+    // viet lai foreach
+    Array.prototype.foreach2 = function (callback) {
+        for (let i in this) {
+            if (this.hasOwnProperty(i)) {
+                callback(this[i], i, this)
+            }
+        }
+    }
+
+    let testfore = numbers.foreach2((value) => {
+        console.log(value)
+    })
+
+    console.log(testfore)
+
+    // viet lai map
+    Array.prototype.map2 = function (callback) {
+        let arr = []
+        let arrLength = this.length
+        for (let i = 0; i < arrLength; i++) {
+            let result = callback(this[i], i)
+            arr.push(result)
+        }
+        return arr
+    }
+
+    let courses = ['js', 'php', 'html', 'python']
+    let testmap = courses.map2((value) => {
+        return value
+    })
+
+    console.log(testmap)
+
+    // viet lai reduce
+    Array.prototype.reduce2 = function (callback, init) {
+        let arrLength = this.length
+        let output = init
+        for (let i = 0; i < arrLength; i++) {
+            output = callback(output, this[i], i, this)
+        }
+
+        return output
+    }
+
+    let testred = numbers.reduce2((luutru, value) => {
+        return luutru + value
+    }, 0)
+
+    console.log(testred)
+
+    // viet lai filter 
+    // filter tra ve 1 cai gi voi 1 dieu kien
+    Array.prototype.myFilter = function (callback) {
+        let output = []
+        let result
+
+        for (let i in this) {
+            if (this.hasOwnProperty(i)) {
+                result = callback(this[i], i, this)
+                if (result) {
+                    output.push(this[i])
+                }
+            }
+
+        }
+
+        return output
+    }
+
+    let testfil = numbers.myFilter((value) => {
+        return value > 2
+    })
+
+    console.log(testfil)
+
+    // viet lai some 
+    // some chi can 1
+    Array.prototype.mySome = function (callback) {
+
+        for (let i in this) {
+            if (this.hasOwnProperty(i)) {
+                if (callback(this[i], i, this)) {
+                    return true
+                }
+            }
+        }
+
+        return false
+    }
+
+    let testsome = numbers.mySome((value) => {
+        return value = 5
+    })
+
+    console.log(testsome)
+
+    // viet lai every
+    // every giong some nma can all
+    Array.prototype.myEvery = function (callback) {
+        let output = true
+        let result
+
+        for (let i in this) {
+            if (this.hasOwnProperty(i)) {
+                result = callback(this[i], i, this)
+                if (!result) {
+                    output = false
+                    break
+                }
+            }
+        }
+
+        return output
+    }
+
+    let testeve = numbers.myEvery((value) => {
+        return value > 0
+    })
+
+    console.log(testeve)
+</script>

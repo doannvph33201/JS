@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+</style>
+
+<body>
+    <div class="container">
+        <h1>ĐĂNG KÝ</h1>
+        <form action="" class="form">
+            <input value="" type="text" id="username" placeholder="username">
+            <p id="errname"></p>
+            <input value="" type="text" id="password" placeholder="password">
+            <p id="errpass"></p>
+            <input value="" type="text" id="email" placeholder="email">
+            <p id="erremail"></p>
+            <select id="address">
+                <option value="" disabled selected hidden>Địa chỉ</option>
+                <option value="hanoi">Hà nội</option>
+                <option value="hochiminh">Hồ Chí Minh</option>
+                <option value="melinh">Mê Linh</option>
+            </select>
+            <p id="erradr"></p>
+            <label>
+                nam
+                <input value="" type="radio" id="gt" name="gt">
+                nu
+                <input value="" type="radio" id="gt" name="gt">
+            </label>
+            <p id="errgt"></p>
+            <button type="button">dang ky</button>
+        </form>
+    </div>
+</body>
+
+<script>
+    // validate
+    let username = document.querySelector('#username')
+    let password = document.querySelector('#password')
+    let email = document.querySelector('#email')
+    let address = document.querySelector('#address')
+    let gt = document.querySelectorAll('#gt')
+
+    let btn = document.querySelector('button')
+
+    let errname = document.querySelector('#errname')
+    let errpass = document.querySelector('#errpass')
+    let erremail = document.querySelector('#erremail')
+    let erradr = document.querySelector('#erradr')
+    let errgt = document.querySelector('#errgt')
+
+    username.addEventListener('keyup', () => {
+        if (username.value.trim() == '') {
+            errname.innerHTML = 'vui long nhap ten'
+            errname.style.color = 'red'
+        } else {
+            errname.innerHTML = ''
+        }
+    })
+
+    password.addEventListener('keyup', () => {
+        if (password.value.trim() == '') {
+            errpass.innerHTML = 'vui long nhap mat khau'
+            errpass.style.color = 'red'
+        } else {
+            errpass.innerHTML = ''
+        }
+    })
+
+    email.addEventListener('keyup', () => {
+        if (email.value.trim() == '') {
+            erremail.innerHTML = 'vui long nhap email'
+            erremail.style.color = 'red'
+        } else {
+            errname.innerHTML = ''
+        }
+    })
+
+    address.addEventListener('click', () => {
+        if (address.value == '') {
+            erradr.innerHTML = 'vui long chon dia chi'
+            erradr.style.color = 'red'
+        } else {
+            erradr.innerHTML = ''
+        }
+    })
+
+    gt.forEach(value => {
+        value.addEventListener('click', () => {
+            if (value.checked == '') {
+                errgt.innerHTML = 'vui long chon gioi tinh'
+                errgt.style.color = 'red'
+            } else {
+                errgt.innerHTML = ''
+            }
+        })
+    })
+</script>
+
+</html>

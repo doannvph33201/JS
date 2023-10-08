@@ -1,0 +1,104 @@
+<script>
+    // Tính tổng các phần tử trong một mảng số:
+    const numbers = [1, 2, 3, 4, 5]
+    let total = numbers.reduce((sum, value) => {
+        return sum + value
+    })
+
+    console.log(total)
+
+    // Chuyển đổi một mảng số thành mảng bình phương của các số đó:
+    let spare = numbers.map((value) => {
+        return value * value
+    })
+
+    console.log(spare)
+
+    // Lấy danh sách tên từ một mảng các đối tượng:
+    const users = [
+        { id: 1, name: 'John' },
+        { id: 2, name: 'Jane' },
+        { id: 3, name: 'Mike' }
+    ]
+
+    let listName = users.map((value) => {
+        return value.name
+    })
+
+    console.log(listName)
+
+    // Loại bỏ các phần tử trùng lặp trong một mảng:
+    const numbers2 = [1, 2, 3, 4, 4, 5, 5]
+    let newArray = [...new Set(numbers2)]
+    console.log(newArray)
+
+    // Tính toán tuổi từ năm sinh trong một mảng các ngày sinh:
+    const birthYears = [1990, 1985, 1992, 2000]
+    let date = new Date()
+    let currentY = date.getFullYear()
+
+    let ages = birthYears.map((value) => {
+        return currentY - value
+    })
+
+    console.log(ages)
+
+    // Chuyển đổi một mảng số thành mảng các chuỗi đại diện cho các số đó:
+    let stringNumber = numbers.map((value) => {
+        return value.toString()
+    })
+
+    console.log(stringNumber)
+
+    // Chuyển đổi một mảng các chuỗi thành các chuỗi viết hoa:
+    const names = ["alice", "bob", "charlie"]
+    let upCase = names.map((value) => {
+        return value.toLocaleUpperCase()
+    })
+
+    console.log(upCase)
+
+    // Thêm một tiền tố vào mỗi phần tử trong mảng chuỗi:
+    const fruits = ["apple", "banana", "cherry"]
+    let listFruits = fruits.map((value) => {
+        return `Quả: ${value}`
+    })
+
+    console.log(listFruits)
+
+    // Tính toán tổng của các mảng con trong mảng chứa các mảng con:
+    const arrays = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    let totalSubArr = arrays.map((value) => {
+        let sum = 0
+        return value.reduce((luutru, value) => {
+            return luutru + value
+        })
+    })
+
+    console.log(totalSubArr)
+
+    // Chuyển đổi mảng các đối tượng thành mảng các giá trị thuộc tính cụ thể:
+    const people = [{ name: "Alice" }, { name: "Bob" }, { name: "Charlie" }]
+    let peoples = people.map((value) => {
+        return {
+            name: value.name
+        }
+    })
+
+    console.log(peoples)
+
+    // Chuyển đổi mảng các số thành mảng các số chẵn:
+    const numbers3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    let evenArray = numbers3.map((value) => {
+        return value * 2
+    })
+
+    console.log(evenArray)
+
+    // Chuyển đổi mảng các chuỗi thành mảng độ dài của mỗi chuỗi:
+    let numberLength = numbers3.map((value) => {
+        return value.toString().length
+    })
+
+    console.log(numberLength)
+</script>

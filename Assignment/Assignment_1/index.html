@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        width: 100%;
+        background: #F5FBFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .container {
+        width: 70%;
+    }
+
+    .header {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .main {
+        width: 100%;
+        margin-top: 70px;
+    }
+
+    .wpr-main {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 20px;
+    }
+
+    .content {
+        position: relative;
+        width: 308px;
+        padding: 50px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        row-gap: 10px;
+        background: #FFFFFF;
+    }
+
+    .content .img,
+    .sub-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .sub-img {
+        position: absolute;
+        top: -50px;
+        right: 10%;
+    }
+
+    .sub-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: none;
+    }
+
+    .img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    img {
+        cursor: pointer;
+    }
+
+    .footer {
+        width: 100%;
+        text-align: justify;
+    }
+
+    .footer p:nth-child(2) {
+        display: none;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <p>service</p>
+            <h1>Services we provide</h1>
+            <span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Lectus mattis nunc aliquam tincidunt est
+                non.
+                Viverra nec eu.
+            </span>
+        </div>
+        <div class="main">
+            <div class="wpr-main">
+                <div class="content">
+                    <div class="img">
+                        <img src="/imgs/1.jpg" alt="">
+                    </div>
+                    <div class="name">
+                        <h2>Web Design</h2>
+                    </div>
+                    <div class="des">
+                        <span>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </span>
+                    </div>
+                    <div class="sub-img">
+                        <img src="/imgs/3.jpg" alt="">
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="img">
+                        <img src="/imgs/2.jpg" alt="">
+                    </div>
+                    <div class="name">
+                        <h2>Web Design</h2>
+                    </div>
+                    <div class="des">
+                        <span>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </span>
+                    </div>
+                    <div class="sub-img">
+                        <img src="/imgs/4.jpg" alt="">
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="img">
+                        <img src="/imgs/3.jpg" alt="">
+                    </div>
+                    <div class="name">
+                        <h2>Web Design</h2>
+                    </div>
+                    <div class="des">
+                        <span>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </span>
+                    </div>
+                    <div class="sub-img">
+                        <img src="/imgs/1.jpg" alt="">
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="img">
+                        <img src="/imgs/4.jpg" alt="">
+                    </div>
+                    <div class="name">
+                        <h2>Web Design</h2>
+                    </div>
+                    <div class="des">
+                        <span>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </span>
+                    </div>
+                    <div class="sub-img">
+                        <img src="/imgs/2.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, <a href="#">
+                    ReadMore
+                </a>
+            </p>
+
+            <p class="block">
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
+                unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                passages, and more recently with desktop publishing software like Aldus PageMaker including versions of
+                Lorem Ipsum.
+            </p>
+        </div>
+    </div>
+
+</body>
+<script>
+    // change images
+    let images = document.querySelectorAll('.content .img img')
+    let subImgs = document.querySelectorAll('.content .sub-img img')
+    let count = 0
+
+    images.forEach((value, index) => {
+        value.addEventListener('click', () => {
+            count++
+
+            if (count % 2 != 0) {
+                subImgs[index].style.display = 'block'
+            } else {
+                subImgs[index].style.display = 'none'
+                count = 0
+            }
+        })
+    })
+
+    // display block content
+    let aBtn = document.querySelector('.footer a')
+    let contentBlock = document.querySelector('.block')
+
+    aBtn.addEventListener('click', () => {
+        count++
+        if (count % 2 != 0) {
+            contentBlock.style.display = 'block'
+        } else {
+            contentBlock.style.display = 'none'
+            count = 0
+        }
+    })
+</script>
+
+
+</html>

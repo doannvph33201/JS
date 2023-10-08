@@ -1,0 +1,32 @@
+<script>
+    myArray = [
+        {
+            id: 1,
+            name: "Chuyên mục 1",
+            coin: 100
+        },
+        {
+            id: 2,
+            name: "Chuyên mục 2",
+            coin: 50
+        },
+        {
+            id: 3,
+            name: "Chuyên mục 3",
+            coin: 20
+        }
+    ]
+
+    let sumCoin = 0
+
+    for (let value of myArray) {
+        sumCoin += value.coin
+    }
+    console.log(sumCoin);
+
+    let newArray = myArray.map(item => {
+        return item.name
+    })
+
+    console.log(newArray)
+</script>

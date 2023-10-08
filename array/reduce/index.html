@@ -1,0 +1,81 @@
+<script>
+    // Tính tổng các số trong mảng:
+    const numbers = [1, 2, 3, 4, 5]
+    let total = numbers.reduce((luutru, value) => {
+        return luutru + value
+    }, 0)
+
+    console.log(total)
+
+    // Tìm giá trị lớn nhất trong mảng:
+    const numbers2 = [10, 5, 8, 20, 3]
+    let max = numbers2.reduce((luutru, value) => {
+        return Math.max(luutru, value)
+    }, -Infinity)
+
+    console.log(max)
+
+    // Tìm giá trị nhỏ nhất trong mảng:
+    let min = numbers2.reduce((luutru, value) => {
+        return Math.min(luutru, value)
+    }, Infinity)
+
+    console.log(min)
+
+    // Tính trung bình cộng của mảng:
+    let sum = numbers.reduce((luutru, value) => {
+        return (luutru + value)
+    }, 0)
+
+    let ave = sum / numbers.length
+
+    console.log(ave)
+
+    // Chuyển mảng các chuỗi thành một chuỗi duy nhất:
+    const words = ["Hello", " ", "world", "!"]
+    let strings = words.reduce((luutru, value) => {
+        return luutru + value
+    }, "")
+
+    console.log(strings)
+
+    // Tạo một đối tượng đếm các phần tử trong mảng:
+    const fruits = ["apple", "banana", "apple", "orange", "banana", "apple"]
+    let count = fruits.reduce((luutru, value) => {
+        luutru[value] = (luutru[value] || 0) + 1
+        return luutru
+    }, {})
+
+    console.log(count)
+
+    // Nối tất cả các mảng con thành một mảng lớn:
+    const arrays = [[1, 2], [3, 4], [5, 6]]
+    let newArray = arrays.reduce((luutru, value) => {
+        return luutru.concat(value)
+    }, [])
+
+    console.log(newArray)
+
+    // Tìm các số chẵn trong mảng:
+    const numbers3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    let evan = numbers3.reduce((luutru, value) => {
+        if (value % 2 == 0) {
+            luutru.push(value)
+        }
+        return luutru
+    }, [])
+
+    console.log(evan)
+
+    // Tính tổng các phần tử trong mảng số nguyên bằng cách bỏ qua các phần tử không phải số nguyên:
+    const mixedArray = [1, "two", 3, "four", 5]
+    let totalInt = mixedArray.reduce((luutru, value) => {
+        if (typeof value === "number" && Number.isInteger(value)) {
+            luutru += value
+        }
+
+        return luutru
+    }, 0)
+
+    console.log(totalInt)
+</script>
